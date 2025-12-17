@@ -17,4 +17,4 @@ jobs:
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         # Upload toàn bộ thư mục gốc lên public_html
-        server-dir: ./domains/hoangquocdat.id.vn/public_html/DuAnWeb
+        server-dir: ./domains/hoangquocdat.id.vn/public_html/DuAnWeb/
