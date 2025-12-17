@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Shop Fullstack</title>
+</head>
+
+<body>
+    <h1>Danh sách sản phẩm (Frontend gọi Backend)</h1>
+    <ul id="list">Đang tải...</ul>
+
+    <script>
+        // Lưu ý: Khi deploy lên host, đường dẫn này sẽ là ../backend/api.php
+        fetch('../backend/api.php')
+            .then(res => res.json())
+            .then(data => {
+                const html = data.map(p => `<li>${p.name} - $${p.price}</li>`).join('');
+                document.getElementById('list').innerHTML = html;
+            })
+            .catch(err => console.error(err));
+    </script>
+</body>
+
+</html>
